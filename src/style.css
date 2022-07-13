@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Karla', sans-serif;
+}
+
+article {
+    width: 550px;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 37px 0 20.5px;
+    background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
+    height: 65px;
+    color: #fff;
+}
+
+.main-header span {
+    font-weight: 700;
+    font-size: 20.75px;
+    line-height: 24.25px;
+    letter-spacing: -10%;
+
+}
+
+.main-header h3 {
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+
+}
+
+
+
+
+.main-header--title{
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+}
