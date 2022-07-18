@@ -91,13 +91,13 @@ article {
   max-width: 100%;
 }
  
-.meme {
+/* .meme {
   position: relative;
 
-}
+} */
 
 
-.meme-text {
+/* .meme-text {
   color: #fff;
   -webkit-text-stroke: 1px #000;
   font-family: "Impact";
@@ -121,4 +121,4 @@ left:50%;
 bottom:0%;
 transform: translateX(-50%);
 
-}
+} */
