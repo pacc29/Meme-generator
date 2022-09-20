@@ -2,42 +2,53 @@ import React from "react";
 import memesdata from "../memesdata";
 
 export default function Meme() {
-
   let [meme, setMeme] = React.useState({
-    topText: '',
-    bottomText: '',
-    randomImage: 'https://i.imgflip.com/3si4.jpg' 
-  })
+    topText: "",
+    bottomText: "",
+    randomImage: "https://i.imgflip.com/3si4.jpg",
+  });
 
-  let [allMemeImages, setAllMemeImages] = React.useState(memesdata)
-
+  let [allMemeImages, setAllMemeImages] = React.useState(memesdata);
 
   let getImg = () => {
     let memesArray = allMemeImages.data.memes;
     let randNumber = Math.floor(Math.random() * memesArray.length);
-    let url = memesArray[randNumber].url
+    let url = memesArray[randNumber].url;
 
     setMeme((prevMeme) => ({
       ...prevMeme,
-      randomImage: url
-    }))
+      randomImage: url,
+    }));
   };
 
+  function handleChange(event) {
+    const { value, name } = event.target;
+    setMeme((prevMeme) => {
+      return {
+        ...prevMeme,
+        [name]: value,
+      };
+    });
+  }
 
   return (
     <section className="main-meme">
       <div className="inputs">
         <input
           className="input upperInput"
-          // onInput={display}
+          name="topText"
           type="text"
           placeholder="Top text"
+          value={meme.topText}
+          onChange={handleChange}
         ></input>
         <input
           className="input lowerInput"
-          // onInput={display}
+          name="bottomText"
           type="text"
           placeholder="Bottom text"
+          value={meme.bottomText}
+          onChange={handleChange}
         ></input>
       </div>
       <button className="button" onClick={getImg}>
@@ -45,17 +56,9 @@ export default function Meme() {
       </button>
       <div className="meme">
         <img className="img-meme" alt="meme" src={meme.randomImage} />
-        {/* <span className="meme-text meme-text--upper">{upperText}</span>
-        <span className="meme-text meme-text--lower">{lowerText}</span> */}
+        <span className="meme-text meme-text--upper">{meme.topText}</span>
+        <span className="meme-text meme-text--lower">{meme.bottomText}</span>
       </div>
     </section>
   );
 }
-
-// let [upperText, setUpperText] = React.useState("");
-// let [lowerText, setLowerText] = React.useState("");
-
-// let display = () => {
-//   setUpperText(document.querySelector(".upperInput").value);
-//   setLowerText(document.querySelector(".lowerInput").value);
-// };
