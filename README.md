@@ -1,10 +1,10 @@
 # Meme Generator
 
-This project allows to fill out a couple of input fields (top and bottom) and provides a random meme-image every time the "get a new meme image" button is pressed
+This project allows to fill out a couple of input fields (top and bottom) and provides a random meme images from an API every time the "get a new meme image" button is pressed.
 
 ## Requirements
 
-This project requires Nodejs LTS or greater
+This project requires Nodejs LTS or greater.
 
 ## Usage
 
